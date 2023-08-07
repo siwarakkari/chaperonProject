@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from chaperonproject.models import  Conversation
+from chaperonee.models import  Conversation
 
 class  ConversationSerializer(serializers.ModelSerializer):
     class Meta:

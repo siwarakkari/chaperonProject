@@ -1,4 +1,4 @@
-
+dnspython
 djongo
 numpy
 tqdm
@@ -14,3 +14,5 @@ git+https://github.com/openai/whisper.git
 torch
 djangorestframework
 rich
+summarizer
+wordcloud

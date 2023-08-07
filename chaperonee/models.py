@@ -7,4 +7,6 @@ class Conversation(models.Model):
     sum_text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        app_label = 'chaperonee'
 # Create your models here.

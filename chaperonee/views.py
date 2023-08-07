@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from chaperonee.whisper_mic.whisper_mic import WhisperMic
 from django.views.decorators.csrf import csrf_exempt
-import keyboard 
 from chaperonee.test import summarization
 from rest_framework.parsers import JSONParser
 from chaperonee.models import Conversation

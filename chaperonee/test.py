@@ -1,4 +1,4 @@
-from summarizer import Summarizer,TransformerSummarizer
+from summarizer import Summarizer
 from transformers import logging
 
 
