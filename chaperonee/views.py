@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from chaperonproject.whisper_mic.whisper_mic import WhisperMic
+from chaperonee.whisper_mic.whisper_mic import WhisperMic
 from django.views.decorators.csrf import csrf_exempt
 import keyboard 
-from chaperonproject.test import summarization
+from chaperonee.test import summarization
 from rest_framework.parsers import JSONParser
-from chaperonproject.models import Conversation
-from chaperonproject.serializers import ConversationSerializer
-from chaperonproject.emotion import process
+from chaperonee.models import Conversation
+from chaperonee.serializers import ConversationSerializer
+from chaperonee.emotion import process
 import re
-from chaperonproject.medical import filtered,remove
+from chaperonee.medical import filtered,remove
 
 
 
