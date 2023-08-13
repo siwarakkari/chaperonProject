@@ -1,5 +1,6 @@
+import time
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, StreamingHttpResponse
 from chaperonee.whisper_mic.whisper_mic import WhisperMic
 from django.views.decorators.csrf import csrf_exempt
 from chaperonee.test import summarization
@@ -19,24 +20,26 @@ from chaperonee.medical import filtered,remove
 @csrf_exempt
 def transcribe(request):
   if request.method == 'POST':
-    #  global  filtered_words
-    #  filtered_words = []
+   
+    
+     
+     global  filtered_words
+     filtered_words = []
      res=""
-     i=0
+    
      mic = WhisperMic(english=True)
-     while i<5 :
+     while True :
        result = mic.listen()
        print("You said: " + result)
-      #  processed_text=remove(result)
-      #  filtered_word=filtered(processed_text)
        res += result +" "
-       i+=1
+     #  processed_text=remove(result)
+      #  filtered_word=filtered(processed_text)
 
-      #  filtered_words.extend([word for word in specific_words if word in result and word not in filtered_words])
-      #  for word in filtered_words:
-      #      regex_pattern = r"\b" + re.escape(word) + r"s?\b"  # Match both singular and plural forms
-      #      result = re.sub(regex_pattern, f"{word} (medical)", result)
-      #  print(filtered_word)
+       filtered_words.extend([word for word in specific_words if word in result and word not in filtered_words])
+       for word in filtered_words:
+           regex_pattern = r"\b" + re.escape(word) + r"s?\b"  # Match both singular and plural forms
+           result = re.sub(regex_pattern, f"{word} (medical)", result)
+       print(filtered_word)
       #  process(result)
      print(res)
      rrr=summarization(res)
