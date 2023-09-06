@@ -1,0 +1,2 @@
+# Ignore large files
+chapron/cardiffnlp/twitter-roberta-base-emotion/pytorch_model.bin
