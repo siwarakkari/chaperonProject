@@ -46,6 +46,10 @@ def process(text):
       s = scores[ranking[i]]
       
       print(f"{i+1}) {l} {np.round(float(s), 4)}")
-      if  labels[ranking[i]] == "anger" and scores[ranking[i]] > 0.6000 :
+      if ( labels[ranking[i]] == "anger" or labels[ranking[i]] == "sadness") and scores[ranking[i]] > 0.5000 :
          print ("is every thing is okay?")
+         return("VIOLENCE DETECTED")
+      else:
+         return ("0")
+         
    

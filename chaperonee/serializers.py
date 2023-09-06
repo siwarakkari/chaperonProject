@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from chaperonee.models import  Conversation
+from chaperonee.models import  Transcription
 
-class  ConversationSerializer(serializers.ModelSerializer):
+class TranscriptionSerializer(serializers.ModelSerializer):
     class Meta:
-        model=  Conversation
-        fields=('_id', 'transcript_text','sum_text','created_at')
+        model=  Transcription
+        fields=('patientId', ' roomId','transcription','summary','created_at')
